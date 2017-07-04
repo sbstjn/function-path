@@ -22,6 +22,6 @@ deployment:
   production:
     tag: /v[0-9]+(\.[0-9]+)*$/
     commands:
-      - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/serverless-sqs-alarms-plugin/.npmrc
+      - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/function-path/.npmrc
       - $(yarn bin)/dot-json package.json version ${CIRCLE_TAG:1}
       - npm publish

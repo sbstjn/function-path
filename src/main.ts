@@ -19,7 +19,7 @@ const Interface = {
     return `${absp}.js`
   },
 
-  get: (data: object, path: string) : any => {
+  get: (data: object, path: string): any => {
     const tmp = (path || '').split('.')
     const key = tmp.shift() || ''
 
@@ -38,7 +38,7 @@ const Interface = {
     throw new Error('Cannot find path in data')
   },
 
-  has: (data: object, path: string) : boolean => {
+  has: (data: object, path: string): boolean => {
     try {
       Interface.get(data, path)
 
