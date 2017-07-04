@@ -1,0 +1,48 @@
+{
+  "name": "function-path",
+  "description": "Require functions and child objects from JavaScript modules.",
+  "author": "Sebastian Müller <mail@sbstjn.com>",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sbstjn/function-path.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sbstjn/function-path/issues"
+  },
+  "homepage": "https://github.com/sbstjn/function-path",
+  "scripts": {
+    "test": "jest",
+    "test:cover": "jest --coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "lint": "tslint src/**/*.ts",
+    "build": "tsc"
+  },
+  "main": "./dist/Parser.js",
+  "jest": {
+    "transform": {
+      ".*": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "globals": {
+      "__TS_CONFIG__": {
+        "module": "commonjs"
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^20.0.2",
+    "@types/node": "^8.0.7",
+    "coveralls": "^2.13.1",
+    "dot-json": "^1.0.3",
+    "jest": "^20.0.4",
+    "jest-cli": "^20.0.4",
+    "ts-jest": "^20.0.6",
+    "typescript": "^2.4.1"
+  }
+}
