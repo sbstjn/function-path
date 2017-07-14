@@ -1,5 +1,5 @@
 const Interface = {
-  file: (path: string) => {
+  file: (path: string): string => {
     let absp = path.substr(0, path.lastIndexOf('/'))
     let file = path.substr(path.lastIndexOf('/') + 1)
 
@@ -48,7 +48,7 @@ const Interface = {
     }
   },
 
-  path: (path: string) => {
+  path: (path: string): string|null => {
     const last = path.substr(path.lastIndexOf('/') + 1)
 
     if (last.indexOf('.') > -1) {
@@ -58,7 +58,7 @@ const Interface = {
     return null
   },
 
-  require: (path: string) => {
+  require: (path: string): () => any => {
     const tmp = require(Interface.file(path))
 
     return Interface.get(tmp, Interface.path(path) || '')
