@@ -1,24 +1,24 @@
-import Path from '../src/main.ts';
+import Path from '../src/main.ts'
 
 it('parse file from path', () => {
-  expect(Path.file("foo.bar/baz.lorem")).toBe("foo.bar/baz.js")
-  expect(Path.file("foo/bar.baz/lorem")).toBe("foo/bar.baz/lorem.js")
-  expect(Path.file("foo/bar.baz/lorem.ipsum")).toBe("foo/bar.baz/lorem.js")
-  expect(Path.file("foo/bar/baz.lorem")).toBe("foo/bar/baz.js")
-  expect(Path.file("foo/bar.baz.lorem")).toBe("foo/bar.js")
-  expect(Path.file("foo/bar.baz")).toBe("foo/bar.js")
-  expect(Path.file("foo/bar")).toBe("foo/bar.js")
-  expect(Path.file("foo")).toBe("foo.js")
+  expect(Path.file('foo.bar/baz.lorem')).toBe('foo.bar/baz.js')
+  expect(Path.file('foo/bar.baz/lorem')).toBe('foo/bar.baz/lorem.js')
+  expect(Path.file('foo/bar.baz/lorem.ipsum')).toBe('foo/bar.baz/lorem.js')
+  expect(Path.file('foo/bar/baz.lorem')).toBe('foo/bar/baz.js')
+  expect(Path.file('foo/bar.baz.lorem')).toBe('foo/bar.js')
+  expect(Path.file('foo/bar.baz')).toBe('foo/bar.js')
+  expect(Path.file('foo/bar')).toBe('foo/bar.js')
+  expect(Path.file('foo')).toBe('foo.js')
 })
 
 it('parse path from path', () => {
-  expect(Path.path("foo/bar.baz/lorem/ipsum.dolor")).toBe("dolor")
-  expect(Path.path("foo/bar/baz/lorem.ipsum.dolor")).toBe("ipsum.dolor")
-  expect(Path.path("foo/bar.baz/lorem.ipsum/dolor.sit.amet")).toBe("sit.amet")
-  expect(Path.path("foo/bar.baz.lorem")).toBe("baz.lorem")
-  expect(Path.path("foo/bar.baz")).toBe("baz")
-  expect(Path.path("foo/bar")).toBe(null)
-  expect(Path.path("foo")).toBe(null)
+  expect(Path.path('foo/bar.baz/lorem/ipsum.dolor')).toBe('dolor')
+  expect(Path.path('foo/bar/baz/lorem.ipsum.dolor')).toBe('ipsum.dolor')
+  expect(Path.path('foo/bar.baz/lorem.ipsum/dolor.sit.amet')).toBe('sit.amet')
+  expect(Path.path('foo/bar.baz.lorem')).toBe('baz.lorem')
+  expect(Path.path('foo/bar.baz')).toBe('baz')
+  expect(Path.path('foo/bar')).toBe(null)
+  expect(Path.path('foo')).toBe(null)
 })
 
 it('has path in object', () => {
